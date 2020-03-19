@@ -19,16 +19,6 @@ let showSuccess = input => {
   formControl.className = "form-control success";
 };
 
-// Validate Email   from (STACKOVER FLOW)
-let checkEmail = input => {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(input.value.trim())) {
-    showSuccess;
-  } else {
-    showError(input, "Email is not valid");
-  }
-};
-
 //**Check required fields (USING forEach method) */
 
 let checkRequired = inputArray => {
@@ -54,6 +44,15 @@ const checkLength = (input, min, max) => {
   }
 };
 
+// Validate Email   reference (STACKOVER FLOW)
+let checkEmail = input => {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (re.test(input.value.trim())) {
+    showSuccess;
+  } else {
+    showError(input, "Email is not valid");
+  }
+};
 // Check passwords match
 
 let checkPasswordsMatch = (input1, input2) => {
